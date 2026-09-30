@@ -1,0 +1,13 @@
+{
+  "name": "hospital-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack Hospital Management System (HMS)",
+  "scripts": {
+    "install:all": "npm.cmd install --prefix server && npm.cmd install --prefix client",
+    "seed": "npm.cmd --prefix server run seed",
+    "server": "npm.cmd --prefix server run dev",
+    "client": "npm.cmd --prefix client run dev",
+    "dev": "node -e \"const { spawn } = require('child_process'); const p1 = spawn('npm.cmd', ['--prefix', 'server', 'run', 'dev'], { stdio: 'inherit', shell: true }); const p2 = spawn('npm.cmd', ['--prefix', 'client', 'run', 'dev'], { stdio: 'inherit', shell: true }); process.on('SIGINT', () => { p1.kill(); p2.kill(); process.exit(); });\""
+  }
+}
